@@ -7,7 +7,8 @@ import {
   UserOutlined,
   PoweroffOutlined,
 } from "@ant-design/icons/lib/icons";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Router } from "react-router-dom";
+import Login from "./Login";
 
 function App() {
   return (
@@ -122,15 +123,21 @@ function Sidebar() {
   );
 }
 
+<Routes>
+  <Router>
+    <Route path="/login" element={<Login />} />
+  </Router>
+</Routes>;
+
 function Content() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<div>Home</div>} />
+        <Route path="/" element={<div>home</div>} />
         <Route path="/project" element={<div>Project</div>} />
         <Route path="/attendance" element={<div>Attendance</div>} />
         <Route path="/manage" element={<div>Manage Employee</div>} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route path="/userlist" element={<div>User List</div>} />
         <Route path="/profile" element={<div>Profile</div>} />
       </Routes>
