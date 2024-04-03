@@ -123,12 +123,6 @@ function Sidebar() {
   );
 }
 
-<Routes>
-  <Router>
-    <Route path="/login" element={<Login />} />
-  </Router>
-</Routes>;
-
 function Content() {
   return (
     <>
@@ -137,9 +131,13 @@ function Content() {
         <Route path="/project" element={<div>Project</div>} />
         <Route path="/attendance" element={<div>Attendance</div>} />
         <Route path="/manage" element={<div>Manage Employee</div>} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/userlist" element={<div>User List</div>} />
         <Route path="/profile" element={<div>Profile</div>} />
+      </Routes>
+
+      <Routes>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

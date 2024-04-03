@@ -3,7 +3,7 @@ import { Form, Input, Button } from "antd";
 import { Navigate } from "react-router-dom";
 
 const Login = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   useEffect(() => {
     setIsLoggedIn(true);
