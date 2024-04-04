@@ -1,0 +1,103 @@
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  position: relative;
+  max-width: 900px;
+  width: 100%;
+  border-radius: 6px;
+  background-color: rgb(246, 244, 243);
+  padding: 30px;
+  margin: 0 85px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+}
+.container header::before {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  width: 27px;
+  border-radius: 8px;
+  background-color: #1227e2;
+}
+
+.container form {
+  position: relative;
+  margin-top: 16px;
+  min-height: 490px;
+  background-color: #fff;
+}
+.container form .details {
+  margin-top: 10px;
+}
+.container form .title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+  color: #333;
+  display: block;
+}
+.container form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+form .fields .input-field {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% / 3 - 15px);
+  margin: 4px;
+}
+.input-field input {
+  height: 42px;
+  margin: 8px 0;
+  font-weight: 400;
+  padding: 0 15px;
+  border: 1px solid #aaa;
+  height: 42px;
+  margin: 8px 0;
+}
+
+.input-field input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+.input-field label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+.input-field input[type="date"] {
+  color: #707070;
+}
+.input-field input[type="date"]:valid {
+  color: #333;
+}
+
+.container form button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 45px;
+  max-width: 200px;
+  border: none;
+  width: 100%;
+  color: #fff;
+  border-radius: 6px;
+  margin: 25px 0;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.container form button:hover {
+  background-color:#265df2 ;
+}

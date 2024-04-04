@@ -2,12 +2,17 @@ import "./App.css";
 import { Menu } from "antd";
 import Dashboard from "./Dashboard";
 import {
-  HomeOutlined,
-  DashboardOutlined,
+  UsergroupAddOutlined,
+  FileFilled,
+  ProjectFilled,
   UserOutlined,
+  DashboardOutlined,
+  PieChartFilled,
   PoweroffOutlined,
 } from "@ant-design/icons/lib/icons";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Router } from "react-router-dom";
+import Login from "./Login";
+import AddEmployee from "./Components/AddEmployee";
 
 function App() {
   return (
@@ -84,31 +89,32 @@ function Sidebar() {
         defaultSelectedKeys={[window.location.pathname]}
         items={[
           {
-            label: "Home",
-            key: "/",
-            icon: <HomeOutlined />,
-          },
-          {
             label: "dashboard",
             key: "/Dashboard",
             icon: <DashboardOutlined />,
           },
           {
-            label: "User List",
+            label: "Employee",
             key: "/usersList",
             icon: <UserOutlined />,
             children: [
-              { label: "Active Users", key: "/activerUser" },
-              {
-                label: "Disable Users",
-                key: "./disableUser",
-              },
+              { label: "Add Employee", key: "/addemployee", icon: <UsergroupAddOutlined />},
             ],
           },
           {
-            label: "User List",
-            key: "/usersList",
-            icon: <UserOutlined />,
+            label: "Project",
+            key: "/project",
+            icon: <PieChartFilled />,
+          },
+          {
+            label: "Task",
+            key: "/task",
+            icon: <ProjectFilled />,
+          },
+          {
+            label: "Attendance",
+            key: " /attendance",
+            icon: <FileFilled />,
           },
           {
             label: "LogOut",
@@ -126,13 +132,19 @@ function Content() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<div>Home</div>} />
         <Route path="/project" element={<div>Project</div>} />
+        <Route path="/task" element={<div>task</div>} />
         <Route path="/attendance" element={<div>Attendance</div>} />
         <Route path="/manage" element={<div>Manage Employee</div>} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/userlist" element={<div>User List</div>} />
         <Route path="/profile" element={<div>Profile</div>} />
+        <Route path="/addemployee" element={<AddEmployee/>} />
+        
+      </Routes>
+
+      <Routes>
+        <Route path="/login" element={<Login />} />
       </Routes>
     </>
   );

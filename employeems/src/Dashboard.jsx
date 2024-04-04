@@ -1,3 +1,4 @@
+
 import { FaUsers } from "react-icons/fa";
 import StatisticCard from "./components/StatisticCard";
 
@@ -54,8 +55,4 @@ const Dashboard = () => {
           icon={<FaUsers />}
         />
       </div>
-    </div>
-  );
-};
-
 export default Dashboard;
