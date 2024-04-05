@@ -1,47 +1,9 @@
 import React from "react";
-import { Form, Input, Select } from "antd";
 import "./employeeAdd.css";
 
 const AddEmployee = () => {
   return (
     <>
-      {/* <Form className=" form-add">
-        <Form.Item label="Name" name={"myName"}>
-          <input placeholder="Enter name" />
-        </Form.Item>
-        <Form.Item label="Department" name={"department"}>
-          <input placeholder="Enter Deparment" />
-        </Form.Item>
-        <Form.Item label="Email" name={"email"}>
-          <input placeholder="Enter Email" />
-        </Form.Item>
-        <Form.Item label="Phone" name={"Phone"}>
-          <input placeholder="Enter Phone number" />
-        </Form.Item>
-        <Form.Item label="Started Date" name={"StartDate"}>
-          <input type="date" />
-        </Form.Item>
-        <Form.Item label="Tern Date" name={"StartDate"}>
-          <input type="date" />
-        </Form.Item>
-        <Form.Item label="Gender" name={"gender"}>
-          <Select
-            placeholder="Select Gender"
-            options={[
-              {
-                label: "Male",
-                value: "Male",
-              },
-              {
-                label: "Female",
-                value: "Female",
-              },
-            ]}
-          />
-        </Form.Item>
-
-        <button>Submit</button>
-      </Form> */}
 
       <div className="container">
         <header>Add Employee</header>

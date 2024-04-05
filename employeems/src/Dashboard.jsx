@@ -1,6 +1,8 @@
-
 import { FaUsers } from "react-icons/fa";
-import StatisticCard from "./components/StatisticCard";
+import { MdOutlineCardTravel } from "react-icons/md";
+import StatisticCard from "./Components/StatisticCard";
+import { CgDanger } from "react-icons/cg";
+import { FaRegNewspaper } from "react-icons/fa6";
 
 const Dashboard = () => {
   return (
@@ -9,7 +11,7 @@ const Dashboard = () => {
       <div className="grid grid-cols-3 mt-4 gap-20 ">
         <StatisticCard
           text="Registered Employees"
-          total="5"
+          total="4"
           iconBgColor="bg-green-600"
           icon={<FaUsers />}
         />
@@ -21,38 +23,42 @@ const Dashboard = () => {
         />
         <StatisticCard
           text="Listed Leave Type"
-          total="5"
+          total="8"
           iconBgColor="bg-red-600"
           icon={<FaUsers />}
         />
       </div>
       <div className="flex h-[70px] mt-10 justify-center items-center border-t-2 border-b-2">
-        <h1>Leaves Details</h1>
+        <h1>Details</h1>
       </div>
       <div className="grid grid-cols-2 gap-8 pt-8">
         <StatisticCard
-          text="Leaves Applied"
-          total="5"
+          text="Total Users"
+          total="1"
           iconBgColor="bg-blue-600"
-          icon={<FaUsers />}
+          icon={<MdOutlineCardTravel />}
         />
         <StatisticCard
-          text="New Leave Requests"
-          total="5"
+          text="Total leaves"
+          total="6"
           iconBgColor="bg-yellow-400"
-          icon={<FaUsers />}
+          icon={<FaRegNewspaper />}
         />
         <StatisticCard
-          text="RejectedLeave Requests"
+          text="Total Tasks"
           total="5"
           iconBgColor="bg-red-600"
-          icon={<FaUsers />}
+          icon={<CgDanger />}
         />
         <StatisticCard
-          text="Approved Leave Requests"
-          total="5"
+          text="Ongoing projects"
+          total="3"
           iconBgColor="bg-green-600"
           icon={<FaUsers />}
         />
       </div>
+    </div>
+  );
+};
+
 export default Dashboard;

@@ -1,46 +1,71 @@
-import React, { useEffect, useState } from "react";
-import { Form, Input, Button } from "antd";
-import { Navigate } from "react-router-dom";
+// import { Form, Input, Button } from "antd";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
 
 const Login = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const navigate = useNavigate();
+  const handleInput = (e) => {
+    setData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+  const HandleLogin = async (e) => {
+    e.preventDefault();
+    // Login axios 
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/admin/Auth",
+        data
+      );
 
-  useEffect(() => {
-    setIsLoggedIn(true);
-  }, []);
-
-  const onFinish = (values) => {
-    console.log("Received values:", values);
-
-    setIsLoggedIn(false);
+      if (response.status == 200) {
+        console.log(response.data);
+        toast.success("Successful login");
+        navigate("/dashboard");
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.response.data.msg) {
+        toast.error(error.response.data.msg);
+      } else {
+        toast.error("Error");
+      }
+    }
   };
 
-  if (isLoggedIn) {
-    return <Navigate to="/employeems/src/Dashboard.jsx" />;
-  }
-
   return (
-    <>
-      <div className="App">
-        <div></div>
-        <header className="App-header">
-          <Form onFinish={onFinish}>
-            <Form.Item label="User Email" name="username">
-              <Input placeholder="User Email " required />
-            </Form.Item>
-            <Form.Item label="Password" name="password">
-              <Input.Password placeholder="Enter Password" required />
-            </Form.Item>
-
-            <Form.Item>
-              <Button block type="primary" htmlType="submit">
-                Log In
-              </Button>
-            </Form.Item>
-          </Form>
-        </header>
-      </div>
-    </>
+    <div className="container">
+      <form onSubmit={HandleLogin} method="POST">
+        <h1>Login</h1>
+        <div className="form-group">
+          <label>User Email</label>
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Enter Email"
+            onChange={handleInput}
+            name="email"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>User Password</label>
+          <input
+            className="form-control"
+            type="password"
+            placeholder="Enter Password"
+            required
+            onChange={handleInput}
+            name="password"
+          />
+        </div>
+        <input type="submit" className="btn" value="Login"></input>
+      </form>
+    </div>
   );
 };
 

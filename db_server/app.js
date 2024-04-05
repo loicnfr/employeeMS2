@@ -9,7 +9,11 @@ const app = express();
 const PORT = 3000;
 const dbUrl = "mongodb://localhost:27017/employeems";
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:5173"],
+  })
+);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 
