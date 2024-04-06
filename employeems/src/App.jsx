@@ -1,6 +1,7 @@
 import "./App.css";
 
 import Dashboard from "./Dashboard";
+import ProjectPage from "./ProjectPage";
 import "./search.css";
 
 import { Routes, Route } from "react-router-dom";
@@ -18,7 +19,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/project" element={<div>Project</div>} />
+          <Route path="/project" element={<ProjectPage />} />
           <Route path="/task" element={<div>task</div>} />
           <Route path="/attendance" element={<div>Attendance</div>} />
           <Route path="/manage" element={<div>Manage Employee</div>} />

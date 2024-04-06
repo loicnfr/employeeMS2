@@ -15,7 +15,7 @@ const Login = () => {
   };
   const HandleLogin = async (e) => {
     e.preventDefault();
-    // Login axios 
+    // Login axios
     try {
       const response = await axios.post(
         "http://localhost:3000/admin/Auth",
@@ -38,13 +38,18 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={HandleLogin} method="POST">
-        <h1>Login</h1>
-        <div className="form-group">
-          <label>User Email</label>
+    <div className="flex rounded-md cursor bg-gray-100 justify-center items-center min-h-screen">
+      <form
+        className="w-96 p-4  shadow flex flex-col justify-center items-center gap-5"
+        onSubmit={HandleLogin}
+        method="POST"
+      >
+        <h1 className="text-3xl">Login</h1>
+        <div className="flex flex-col">
+          <label className="">User Email</label>
+
           <input
-            className="form-control"
+            className="pl-2"
             type="text"
             placeholder="Enter Email"
             onChange={handleInput}
@@ -52,10 +57,10 @@ const Login = () => {
             required
           />
         </div>
-        <div className="form-group">
+        <div className="flex flex-col">
           <label>User Password</label>
           <input
-            className="form-control"
+            className="pl-2"
             type="password"
             placeholder="Enter Password"
             required
@@ -63,7 +68,13 @@ const Login = () => {
             name="password"
           />
         </div>
-        <input type="submit" className="btn" value="Login"></input>
+        <div className="border-2 text-white bg-black hover:bg-white hover:text-black rounded-[300px]">
+          <input
+            type="submit"
+            className="btn cursor-pointer"
+            value="Login"
+          ></input>
+        </div>
       </form>
     </div>
   );
